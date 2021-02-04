@@ -1,37 +1,28 @@
-import java.util.Iterator;
+
 public class test{
 
     public static void main(String[]args){
-        String s = "let it be";
-        Iterator<String> i = new CustomIterator(4,s);
-        while(i.hasNext()){
-            System.out.println(i.next());
-        }
-        
+        HashTableWordMap w1= new HashTableWordMap();
+        HashTableWordMap w2= new HashTableWordMap();
+
+        w1.update("one");
+        w1.update("two");
+        w1.update("three");
+        w1.update("four");
+
+        w2.update("one");
+        w2.update("two");
+        w2.update("three");
+        w2.update("four");
+        w2.update("cinq");
+        w2.update("six(6)");
+        w2.update("sept");
+        w2.update("huit");
+        w2.update("neuf");
+        w2.update("dix");
+
+        Jaccard j= new Jaccard();
+        System.out.println(j.score(w1, w2));
     }
 
-
-
-
-    static class CustomIterator implements Iterator<String>{
-        private int cursor;
-        private final int range;
-        private String string;
-
-        public CustomIterator(int size,String s){
-            cursor=0;
-            range=size;
-            string=s;
-        }
-        public boolean hasNext(){
-            return cursor + range<=string.length();
-        }
-        public String next(){
-            int temp = cursor;
-            cursor++;
-            return string.substring(temp,temp+range);      
-        }
-
-
-    }
 }
