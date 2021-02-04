@@ -8,7 +8,9 @@ body {
     margin: 0;
     font-family: 'Raleway',sans-serif;
     text-align: center;
-    background-image: url(../images/background.png)
+    background-image: url(../images/background.png);
+    background-repeat : no-repeat;
+    background-attachment: fixed;
 
 }
 img{
