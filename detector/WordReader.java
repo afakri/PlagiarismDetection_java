@@ -18,7 +18,7 @@ public class WordReader {
 
     // The content of the file that was read
     
-    private static String content;
+    public static String content;
 
     /**
      * When an object of the class WordReader is created, this
@@ -99,24 +99,6 @@ public class WordReader {
 
 
 
-    static class CustomIterator implements Iterator<String>{
-        private int cursor;
-        private final int range;
-
-        public CustomIterator(int size){
-            cursor=0;
-            range=size;
-        }
-        public boolean hasNext(){
-            return cursor + range<=WordReader.content.length();
-        }
-        public String next(){
-            int temp = cursor;
-            cursor++;
-            return WordReader.content.substring(temp,temp+range);      
-        }
-
-
-    }
+    
 
 }
